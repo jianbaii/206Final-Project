@@ -1,0 +1,3 @@
+The average space capacity of the most popular data centers in the United States and the United Kingdom is: 
+United States: 1398642.52 sqft
+United Kingdom: 126034.07 sqft
