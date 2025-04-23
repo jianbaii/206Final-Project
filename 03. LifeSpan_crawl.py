@@ -4,23 +4,23 @@ import sqlite3
 
 
 def get_life_data(country_code):
-   
+ 
     cur.execute(f"SELECT * FROM lifespan where country_code = '{country_code}'")  
-    rows = cur.fetchall()  
-    count = len(rows) // 10  
+    rows = cur.fetchall()
+    count = len(rows) // 10 
     if count == 5:
         print("Data has been stored 5 times, 20 data each time, a total of 100 data. No new data will be collected!")
         exit()
-    print(f" {count + 1} crawl {country_code} data")
+    print(f"Numbers of time to get data from {country_code}: {count + 1}")
 
-
+  
     api_url = f'https://api.worldbank.org/v2/country/{country_code}/indicator/SP.DYN.LE00.IN?format=json'
     response = requests.get(api_url)
     r = response.json()
     r = r[1]
 
-
-    datas = []  
+  
+    datas = [] 
     for i in r[(count*10):(count*10+10)]:
         datas.append((country_code, i['date'], i['value']))
     cur.executemany("""
@@ -44,6 +44,7 @@ if __name__ == '__main__':
     """)
     get_life_data("CHN")
     get_life_data("JP")
-  
     cur.close()
     con.close()
+
+
