@@ -32,7 +32,7 @@ def analyse_data():
     plt.plot(x, usa_gdp_y, label='USA', color='green', linewidth=3)
     plt.xlabel('Year', fontsize=12)
     plt.ylabel('GDP (Trillions of USD)', fontsize=12)
-    plt.title('GDP Analysis')
+    plt.title('China vs USA Actual and Predicted GDP from 1980 to 2029')
     plt.legend()
     plt.show()
 
