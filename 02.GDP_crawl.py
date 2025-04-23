@@ -32,7 +32,7 @@ def get_gdp_data(api_url, country_code):
 
 if __name__ == '__main__':
     api_url = "https://www.imf.org/external/datamapper/api/v1/NGDPD"
-    con = sqlite3.connect('sqlite.db')
+    con = sqlite3.connect('Final Project.db')
     cur = con.cursor()
 
     cur.execute("""
